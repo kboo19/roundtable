@@ -13,9 +13,9 @@
   let loading = false;
 
   const handleSubmit = () => {
+    if ($email && $password && $firstName && $lastName && !emailAlreadyExists) {
     loading = true;
     setTimeout(() => {
-      if ($email && $password && $firstName && $lastName) {
         $loggedIn = true;
         $registeredUsers.push({
           email: $email,
@@ -24,8 +24,8 @@
           lastName: $lastName
         })
         loading = false;
-      }
-    }, 2000)
+      }, 2000) 
+    }
   }
 </script>
 
